@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+section.wrapper-box {
+    height: 650px;
+}
+
+section.main-box {
+    width: 77%;
+    height: inherit;
+    float: left;
+    background-color: forestgreen;
+}
+
+section.side-box {
+    width: calc(100% - 77%);
+    height: inherit;
+    float: right;
+    background-color: darkblue;
+}
+
+header {
+    position: fixed;
+    width: 77%;
+    height: 100px;
+    background-color: black;
+}
