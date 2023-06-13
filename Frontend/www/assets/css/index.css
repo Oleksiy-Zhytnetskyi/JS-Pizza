@@ -6,6 +6,7 @@
 /** Variable Declaration */
 :root {
     --main-box-width: 77%;
+    --top-logo-width: 100px;
 }
 
 /** Main Page Layout */
@@ -39,5 +40,48 @@ header {
     background-color: black;
 
     /* Internal styles */
-    padding: 5px 10px 10px 5px;
+    display: flex;
+    padding: 5px;
+}
+
+section.top-logo {
+    width: var(--top-logo-width);
+    min-width: var(--top-logo-width);
+    height: 100%; /* Later use ~125%? */
+    background-color: orange;
+}
+
+section.info-box {
+    /* Self */
+    width: calc(100% - var(--top-logo-width));
+    background-color: yellow; /* Subject to change */
+
+    /* Internal styles */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; /* Subject to change | Requires additional testing */
+    padding: 0px 15px;
+}
+
+section.info-box-item {
+    /* Self */
+    height: 50%;
+
+    /* Internal styles */
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alternatively, use padding */
+}
+
+section.top-info, section.item-data-wrapper {
+    /* Self? */
+    
+    /* Internal styles */
+    display: flex;
+    justify-content: space-between;
+}
+
+/** Auxiliary Styles */
+.uses-top-border {
+    border-top: 1px solid black; /* Color is subject to change */
 }
