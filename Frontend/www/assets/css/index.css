@@ -3,27 +3,41 @@
     padding: 0px;
 }
 
+/** Variable Declaration */
+:root {
+    --main-box-width: 77%;
+}
+
+/** Main Page Layout */
+
 section.wrapper-box {
     height: 650px;
 }
 
 section.main-box {
-    width: 77%;
+    width: var(--main-box-width);
     height: inherit;
     float: left;
     background-color: forestgreen;
 }
 
 section.side-box {
-    width: calc(100% - 77%);
+    width: calc(100% - var(--main-box-width));
     height: inherit;
     float: right;
     background-color: darkblue;
 }
 
+/** Main Box -- Header Elements */
+
 header {
+    /* Self */
     position: fixed;
-    width: 77%;
+    width: var(--main-box-width);
     height: 100px;
+    box-sizing: border-box;
     background-color: black;
+
+    /* Internal styles */
+    padding: 5px 10px 10px 5px;
 }
