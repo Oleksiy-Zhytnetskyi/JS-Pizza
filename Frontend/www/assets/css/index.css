@@ -3,7 +3,12 @@
     padding: 0px;
 }
 
-/** Variable Declaration */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/** Constants Declaration */
 :root {
     --main-box-width: 77%;
     --top-logo-width: 100px;
@@ -12,7 +17,7 @@
 /** Main Page Layout */
 
 section.wrapper-box {
-    height: 650px;
+    height: 100%;
 }
 
 section.main-box {
@@ -23,9 +28,10 @@ section.main-box {
 }
 
 section.side-box {
+    position: fixed;
     width: calc(100% - var(--main-box-width));
     height: inherit;
-    float: right;
+    right: 0px;
     background-color: darkblue;
 }
 
@@ -81,7 +87,23 @@ section.top-info, section.item-data-wrapper {
     justify-content: space-between;
 }
 
+section.top-info > button {
+    /* Self */
+    height: 90%;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    /* Internal styles */
+    padding: 0px 20px;
+}
+
 /** Auxiliary Styles */
-.uses-top-border {
+.uses-tborder {
     border-top: 1px solid black; /* Color is subject to change */
+}
+
+.uses-large-rmargin {
+    margin-right: 20px;
 }
