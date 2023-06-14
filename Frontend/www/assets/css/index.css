@@ -12,6 +12,11 @@ html, body {
 :root {
     --main-box-width: 77%;
     --top-logo-width: 100px;
+
+    /* Side Box */
+    --side-box-top-element-height: 95px;
+    --side-box-bottom-element-height: calc(1.25 * var(--side-box-top-element-height));
+    --side-box-content-height: calc(100% - var(--side-box-top-element-height) - var(--side-box-bottom-element-height));
 }
 
 /** Main Page Layout */
@@ -93,10 +98,77 @@ section.top-info > button {
     margin-top: 5px;
     margin-bottom: 2px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 4px;
 
     /* Internal styles */
     padding: 0px 20px;
+}
+
+/** Side Box Styles */
+section.side-box > section.top-element {
+    /* Self */
+    height: var(--side-box-top-element-height);
+    width: 100%;
+    background-color: wheat;
+
+    /* Internal styles */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.side-box > section.top-element > section {
+    /* Self? */
+
+    /* Internal styles */
+    padding: 0px 10px;
+}
+
+section.side-box-item-wrapper {
+    height: var(--side-box-content-height);
+}
+
+section.side-box-item-wrapper > section.item {
+    height: var(--side-box-bottom-element-height);
+    background-color: gray;
+}
+
+section.side-box > section.bottom-element {
+    height: var(--side-box-bottom-element-height);
+    background-color: whitesmoke;
+}
+
+section.total-price-wrapper {
+    /* Self */
+    height: 40%;
+
+    /* Internal styles */
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+section.total-price-wrapper > span {
+    /* Self? */
+
+    /* Internal styles */
+    padding: 0px 10px;
+}
+
+section.buy-button-wrapper {
+    /* Self? */
+
+    /* Internal styles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+button.buy-button {
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 4px;
 }
 
 /** Auxiliary Styles */
