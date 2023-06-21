@@ -12,19 +12,27 @@ html, body {
 /** Constants Declaration */
 
 :root {
-    --main-box-width: 77%;
     --top-logo-width: 100px;
 
     /* Side Box */
+    --side-box-min-width: 325px;
     --side-box-top-element-height: 95px;
     --side-box-bottom-element-height: calc(1.25 * var(--side-box-top-element-height));
     --side-box-content-height: calc(100% - var(--side-box-top-element-height) - var(--side-box-bottom-element-height));
+
+    --main-box-width: calc(100% - var(--side-box-min-width));
 
     /* Colours */
     --main-white: rgb(235, 235, 235);
     --lighter-grey: rgb(185, 185, 185);
     --hot-orange: rgb(253, 171, 18);
     --lighter-black: rgb(55, 55, 55);
+    --main-grey: rgb(128, 128, 128);
+    --side-box-grey: rgb(205, 205, 205);
+    --button-green: rgb(0, 182, 0);
+    --button-red: rgb(220, 0, 0);
+    --button-red-border: rgb(183, 0, 0);
+    --label-orange: rgb(223, 123, 1);
 }
 
 /** Main Page Layout */
@@ -43,6 +51,7 @@ section.main-box {
 section.side-box {
     position: fixed;
     width: calc(100% - var(--main-box-width));
+    min-width: var(--side-box-min-width);
     height: inherit;
     right: 0px;
     background-color: darkblue;
@@ -156,7 +165,7 @@ section.side-box > section.top-element {
     /* Self */
     height: var(--side-box-top-element-height);
     width: 100%;
-    background-color: wheat;
+    background-color: var(--main-white);
 
     /* Internal styles */
     display: flex;
@@ -164,20 +173,115 @@ section.side-box > section.top-element {
     justify-content: space-between;
 }
 
-section.side-box > section.top-element > section {
+section.item-count-wrapper {
     /* Self? */
 
     /* Internal styles */
-    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 3px;
+}
+
+section.item-count-wrapper > span.first {
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+section.item-count-wrapper > span.second {
+    margin-top: 4px;
+    padding: 0px 8px;
+    border-radius: 100px;
+    color: var(--main-white);
+    font-weight: 600;
+    background-color: var(--hot-orange);
+}
+
+section.side-box > section.top-element > section.clear-cart-items {
+    color: var(--main-grey);
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 10px;
 }
 
 section.side-box-item-wrapper {
     height: var(--side-box-content-height);
+    background-color: var(--side-box-grey);
 }
 
 section.side-box-item-wrapper > section.item {
+    /* Self */
     height: var(--side-box-bottom-element-height);
-    background-color: gray;
+    border-bottom: 1px solid var(--lighter-grey);
+
+    /* Internal styles */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section.data-wrapper {
+    /* Self? */
+
+    /* Internal styles */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0px 10px 15px;
+}
+
+section.data-wrapper > section.label {
+    color: var(--label-orange);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+section.data-wrapper > section.specs-wrapper {
+    /* Self */
+    min-width: 90px;
+    max-width: 90px;
+
+    /* Internal styles */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section.data-wrapper > section.specs-wrapper > section.item-spec {
+    /* Self? */
+
+    /* Internal styles */
+    display: flex;
+    flex-direction: row;
+}
+
+section.data-wrapper > section.specs-wrapper > section.item-spec > img {
+    margin-right: 3px;
+}
+
+section.data-wrapper > section.specs-wrapper > section.item-spec > span {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+section.data-wrapper > section.pricing {
+    /* Self */
+    min-width: 200px;
+
+    /* Internal styles */
+    font-size: 16px;
+    font-weight: 600;
+}
+
+section.data-wrapper > section.pricing > span.total-cost {
+    margin-right: 10px;
+}
+
+section.side-box-item-wrapper > section.item > img {
+    margin-top: 18px;
+    height: 70%;
+    margin-right: -40px;
 }
 
 section.side-box > section.bottom-element {
@@ -187,19 +291,27 @@ section.side-box > section.bottom-element {
 
 section.total-price-wrapper {
     /* Self */
-    height: 40%;
+    height: 30%;
 
     /* Internal styles */
     display: flex;
     justify-content: space-between;
-    align-items: end;
 }
 
-section.total-price-wrapper > span {
-    /* Self? */
+section.total-price-wrapper > span.first {
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
 
-    /* Internal styles */
-    padding: 0px 10px;
+section.total-price-wrapper > span.second {
+    margin-top: 8px;
+    padding-left: 3px;
+    padding-right: 10px;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 section.buy-btn-wrapper {
@@ -209,11 +321,17 @@ section.buy-btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 10px;
+    padding: 15px 10px;
 }
 
 button.buy-btn {
+    width: 280px;
+    min-width: 120px;
+    height: 45px;
+    min-height: 30px;
     padding: 5px 15px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 /** Auxiliary Styles */
@@ -226,9 +344,36 @@ button.buy-btn {
 }
 
 .orange-btn {
-    border: 1px solid black;
-    border-radius: 4px;
+    border: 1.5px solid darkorange;
+    border-radius: 5px;
     background-color: var(--hot-orange);
     color: var(--main-white);
     font-weight: 600;
+}
+
+.btn {
+    color: var(--main-white);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+.green-btn {
+    background-color: var(--button-green);
+    border: 2px solid green;
+    margin-left: 5px;
+}
+
+.red-btn {
+    background-color: var(--button-red);
+    border: 2px solid var(--button-red-border);
+    margin-right: 5px;
+}
+
+.white-btn {
+    color: darkorange;
+    background-color: var(--main-white);
+    border: 2px solid var(--lighter-grey);
+    margin-left: 15px;
 }

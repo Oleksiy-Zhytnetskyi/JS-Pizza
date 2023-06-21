@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="uk">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pizza</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/index.css" />
@@ -51,23 +51,108 @@
         <section class="content-box side-box">
             <!-- In-Cart Item Count Section -->
             <section class="top-element">
-                <!-- Note: use side panel item (Lab2/3) styling here -->
-                <section>Замовлення: 3</section>
-                <section>Очистити замовлення</section>
+                <section class="item-count-wrapper">
+                    <span class="first">Замовлення</span>
+                    <span class="second">3</span>
+                </section>
+                <section class="clear-cart-items">Очистити замовлення</section>
             </section>
 
             <!-- In-Cart Pizza Listing Section -->
             <section class="side-box-item-wrapper">
-                <section class="item">Pizza 1</section>
-                <section class="item">Pizza 2</section>
-                <section class="item">Pizza 3</section>
+                <!-- BBQ (Мала), pizza_2.jpg -->
+                <section class="item">
+                    <section class="data-wrapper">                        
+                        <section class="label">BBQ (Мала)</section>
+                        
+                        <section class="specs-wrapper">
+                            <section class="item-spec">
+                                <img src="assets/images/size-icon.svg" alt="pizza diameter" />
+                                <span>30</span>
+                            </section>
+                            
+                            <section class="item-spec">
+                                <img src="assets/images/weight.svg" alt="pizza weight" />
+                                <span>460</span>
+                            </section>
+                        </section>
+                        
+                        <section class="pricing">
+                            <span class="total-cost">556 грн</span>
+                            <button class="btn red-btn">–</button>
+                            <span class="item-counter">4</span>
+                            <button class="btn green-btn">+</button>
+                            <button class="btn white-btn">×</button>
+                        </section>
+                    </section>
+
+                    <img src="assets/images/pizza_2_side.png" alt="BBQ pizza">
+                </section>
+
+                <!-- Россо Густо (Мала), pizza_4.jpg -->
+                <section class="item">
+                    <section class="data-wrapper">                        
+                        <section class="label">Россо Густо (Мала)</section>
+                        
+                        <section class="specs-wrapper">
+                            <section class="item-spec">
+                                <img src="assets/images/size-icon.svg" alt="pizza diameter" />
+                                <span>30</span>
+                            </section>
+                            
+                            <section class="item-spec">
+                                <img src="assets/images/weight.svg" alt="pizza weight" />
+                                <span>400</span>
+                            </section>
+                        </section>
+                        
+                        <section class="pricing">
+                            <span class="total-cost">189 грн</span>
+                            <button class="btn red-btn">–</button>
+                            <span class="item-counter">1</span>
+                            <button class="btn green-btn">+</button>
+                            <button class="btn white-btn">×</button>
+                        </section>
+                    </section>
+
+                    <img src="assets/images/pizza_4_side.png" alt="BBQ pizza">
+                </section>
+
+                <!-- Міксовий поло (Велика), pizza_1.jpg -->
+                <section class="item">
+                    <section class="data-wrapper">                        
+                        <section class="label">Міксовий поло (Велика)</section>
+                        
+                        <section class="specs-wrapper">
+                            <section class="item-spec">
+                                <img src="assets/images/size-icon.svg" alt="pizza diameter" />
+                                <span>40</span>
+                            </section>
+                            
+                            <section class="item-spec">
+                                <img src="assets/images/weight.svg" alt="pizza weight" />
+                                <span>780</span>
+                            </section>
+                        </section>
+                        
+                        <section class="pricing">
+                            <span class="total-cost">179 грн</span>
+                            <button class="btn red-btn">–</button>
+                            <span class="item-counter">1</span>
+                            <button class="btn green-btn">+</button>
+                            <button class="btn white-btn">×</button>
+                        </section>
+                    </section>
+
+                    <img src="assets/images/pizza_1_side.png" alt="BBQ pizza">
+                </section>
             </section>
 
             <!-- Total Price/Buy Section -->
             <section class="bottom-element">
                 <section class="total-price-wrapper">
-                    <span>Сума замовлення</span>
-                    <span>924 грн</span>
+                    <span class="first">Сума замовлення</span>
+                    <span class="second">924 грн</span>
                 </section>
 
                 <section class="buy-btn-wrapper">
