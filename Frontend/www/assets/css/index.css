@@ -169,21 +169,38 @@ section.top-info, section.item-data-wrapper {
     justify-content: space-between;
 }
 
-section.top-info > button {
+section.top-info > button, section.bottom-info > button {
     height: 90%;
-    margin-top: 5px;
-    margin-bottom: 2px;
     padding: 0px 20px;
     font-size: 16px;
     background-color: darkorange;
 }
 
+section.top-info > button {
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+section.bottom-info > button {
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
 section.bottom-info {
+    /* Self? */
+
+    /* Internal styles */
+    justify-content: space-between;
     font-size: 16px;
     color: var(--main-white);
 }
 
 /** Side Box Styles */
+
+section.side-box {
+    z-index: 3;
+}
 
 section.side-box > section.top-element {
     /* Self */
@@ -595,6 +612,74 @@ section.bottom-logo > section, section.bottom-logo > span {
 
 section.bottom-logo > section.top {
     border-bottom: 1px dotted var(--logo-border-orange);
+}
+
+/** Media Queries */
+
+@media (max-width: 1164px) {
+    section.grid-container {
+        grid-template-columns: auto auto;
+    }
+
+    section.item-data-wrapper > span.third {
+        display: none;
+    }
+}
+
+@media (max-width: 950px) {
+    section.grid-container {
+        grid-template-columns: auto;
+    }
+
+    section.item-data-wrapper > span.second {
+        display: none;
+    }
+}
+
+@media (max-width: 710px) {
+    section.top-info > button {
+        display: none;
+    }
+
+    section.bottom-info {
+        justify-content: end;
+    }
+
+    section.bottom-info > button {
+        display: block;
+    }
+
+    section.bottom-info > span {
+        display: none;
+    }
+
+    section.item-data-wrapper > span.first {
+        font-size: 16px;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 630px) {
+    section.item-data-wrapper > span.first {
+        min-width: 115px;
+        font-size: 16px;
+        margin-right: 0px;
+    }
+
+    section.main-box {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 530px) {
+    section.bottom-info > button {
+        position: fixed;
+        box-sizing: border-box;
+        left: 120px;
+        width: 85px;
+        height: 40px;
+        padding: 0px;
+    }
 }
 
 /** Auxiliary Styles */
