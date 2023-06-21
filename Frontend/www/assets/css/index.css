@@ -13,6 +13,7 @@ html, body {
 
 :root {
     /* Header */
+    --header-height: 100px;
     --top-logo-width: 100px;
 
     /* Side Box */
@@ -69,7 +70,7 @@ header {
     /* Self */
     position: fixed;
     width: var(--main-box-width);
-    height: 100px;
+    height: var(--header-height);
     box-sizing: border-box;
     background-color: black;
     opacity: 80%;
@@ -168,6 +169,7 @@ section.bottom-info {
 }
 
 /** Side Box Styles */
+
 section.side-box > section.top-element {
     /* Self */
     height: var(--side-box-top-element-height);
@@ -341,7 +343,68 @@ button.buy-btn {
     font-weight: 600;
 }
 
+/** Main Box Content Styles */
+
+section.main-content {
+    min-height: calc(100% - var(--header-height));
+    margin-top: var(--header-height);
+}
+
+section.filter-label-wrapper {
+    /* Self? */
+
+    /* Internal styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px 10px 0px;
+}
+
+section.filter-label-wrapper > span.first {
+    margin-right: 7px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+section.filter-label-wrapper > span.second {
+    margin-top: 4px;
+    padding: 0px 8px;
+    border-radius: 100px;
+    color: var(--main-white);
+    font-weight: 600;
+    background-color: var(--hot-orange);
+}
+
+section.filter-wrapper {
+    /* Self? */
+
+    /* Internal styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section.filter-wrapper > span {
+    /* Self */
+    color: darkorange;
+    font-size: 16px;
+    font-weight: 600;
+
+    /* Internal styles */
+    user-select: none;
+    padding: 9px 12px;
+    margin-right: 7px;
+}
+
+section.filter-wrapper > span.all {
+    color: var(--main-white);
+    background-color: var(--hot-orange);
+    border-radius: 4px;
+}
+
 /** Auxiliary Styles */
+
 .uses-tborder {
     border-top: 1px solid var(--lighter-grey);
 }
