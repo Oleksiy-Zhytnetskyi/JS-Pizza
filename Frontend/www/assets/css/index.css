@@ -25,8 +25,12 @@ html, body {
     --item-card-width: 250px;
     --item-card-height: 500px;
 
+    /* Footer */
+    --footer-height: calc(1.5 * var(--side-box-top-element-height));
+
     /* Colours */
     --main-white: whitesmoke;
+    --lighter-black: rgb(75, 75, 75);
     --lighter-grey: rgb(185, 185, 185);
     --hot-orange: rgb(253, 171, 18);
     --main-grey: rgb(128, 128, 128);
@@ -39,6 +43,8 @@ html, body {
     --button-red-hover: rgb(174, 19, 19);
     --button-white-hover: rgb(230, 202, 170);
     --label-orange: rgb(223, 123, 1);
+    --logo-orange: rgb(230, 141, 31);
+    --logo-border-orange: rgb(183, 103, 4);
     --main-beige: rgb(246, 246, 231);
 }
 
@@ -78,7 +84,14 @@ header {
 
     /* Internal styles */
     display: flex;
-    padding: 5px;
+    padding: 0px 5px;
+}
+
+header img.top-logo-edge {
+    position: fixed;
+    width: var(--top-logo-width);
+    top: var(--header-height);
+    transform: rotateX(180deg);
 }
 
 section.top-logo {
@@ -87,7 +100,7 @@ section.top-logo {
     width: var(--top-logo-width);
     min-width: var(--top-logo-width);
     height: 100%;
-    background-color: darkorange;
+    background-color: var(--logo-orange);
 }
 
 section.top-logo > span {
@@ -520,6 +533,68 @@ section.item-card-purchase-wrapper button.buy-item-btn {
     margin-top: 8px;
     padding: 0px 10px;
     font-size: 16px;
+}
+
+/** Main Box -- Footer Elements */
+
+footer {
+    /* Self */
+    height: var(--footer-height);
+    background-color: var(--side-box-grey);
+
+    /* Internal styles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > section {
+    /* Self? */
+
+    /* Internal styles */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--lighter-black);
+    font-size: 14px;
+}
+
+footer span.disclaimer {
+    margin-top: 10px;
+}
+
+section.bottom-logo {
+    /* Self */
+    position: fixed;
+    bottom: 0px;
+    margin-left: 5px;
+    width: var(--top-logo-width);
+    height: calc(1.15 * var(--side-box-top-element-height));
+    background-color: var(--logo-orange);
+
+    /* Internal styles */
+    box-sizing: border-box;
+    padding: 0px 10px;
+    color: var(--main-white);
+    font-weight: 600;
+}
+
+img.bottom-logo-edge {
+    position: fixed;
+    bottom: calc(1.15 * var(--side-box-top-element-height));
+    margin-left: 5px;
+    width: var(--top-logo-width);
+}
+
+section.bottom-logo > section, section.bottom-logo > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+section.bottom-logo > section.top {
+    border-bottom: 1px dotted var(--logo-border-orange);
 }
 
 /** Auxiliary Styles */
